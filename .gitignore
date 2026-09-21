@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+._*
+
+# Python 缓存（本地校验脚本时产生，不应入仓）
+__pycache__/
+*.pyc
+
+# 编辑器临时文件
+*.swp
+*.swo
+Thumbs.db

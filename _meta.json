@@ -1,0 +1,8 @@
+{
+  "name": "memory-fork-routing",
+  "version": "1.0.0",
+  "description": "本地 memory 控制方法论脚手架：关掉不可控云端记忆后，用六分叉路由 + 路由指针把主 MEMORY.md 瘦身为纯路由层，规则下沉到 knowledge/ 二级文件，并用 memory 台账 + 定期人工审核保证有效性。适用于 WorkBuddy 类本地 memory 体系。",
+  "author": "Sean 肖恩",
+  "license": "MIT",
+  "keywords": ["memory", "memory-routing", "agent-memory", "workbuddy", "prompt-engineering"]
+}
