@@ -37,3 +37,12 @@ npx skills add <你的用户名>/memory-fork-routing --skill memory-fork-routing
 ### 4. （可选）上架 SkillHub / ClawHub
 - SkillHub：在 https://lightmake.site 提交仓库地址，按引导填写 description（已写在 SKILL.md frontmatter）。
 - 描述里务必保留「仅适用于 WorkBuddy 类本地 memory 体系 / 分发的是框架骨架而非私人记忆」的可移植性声明。
+
+## 常见问题 / 故障排查
+
+### push 时报 `Invalid username or token. Password authentication is not supported`
+GitHub 自 2021-08 起已**停用账号密码**做 git 验证。终端提示 Password 时，必须填 **Personal Access Token（PAT）**，不是登录密码。
+1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token：勾选 `repo` scope，生成后**立即复制**（只显示一次）。
+2. 重新 `git push -u origin main`：`Username` 填 GitHub 用户名，`Password` 处**粘贴 token**。
+3. 若 macOS 之前缓存了错误密码导致秒失败：执行 `printf "protocol=https\nhost=github.com\n" | git credential-osxkeychain erase` 清缓存，或去「钥匙串访问」删 `github.com` 条目。
+- **更省事**：先 `gh auth login`（浏览器授权），之后 `git push` 不再要密码/token；或改用 SSH（`git@github.com:用户名/memory-fork-routing.git`）。
